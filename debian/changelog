@@ -1,0 +1,209 @@
+meanwhile (1.1.1-2) unstable; urgency=high
+
+  * QA upload.
+  * Set optimization flag to "-O0 -fno-tree-vrp" to fix login issue
+    due to code optimization, similar with #815045. (Closes: #940621)
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 26 Feb 2021 21:17:43 -0500
+
+meanwhile (1.1.1-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream release 1.1.1.
+    + Follow new upstream on GitHub. (Closes: #962924)
+  * debian/rules: Rewrite with dh sequencer.
+  * debian/patches: Drop patches merged by upstream.
+  * debian/control: Update package description. (Closes: #763619)
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 13 Jan 2021 23:41:25 -0500
+
+meanwhile (1.0.2-10) unstable; urgency=medium
+
+  * QA upload.
+  * debian/control:
+    + Update Vcs-* fields to use git packaging repo under Salsa Debian
+      Group.
+    + Bump debhelper compat to v13.
+    + Bump Standards-Version to 4.5.0.
+    + Use new homepage on GitHub.
+  * debian/watch: Monitor releases on GitHub.
+
+ -- Boyuan Yang <byang@debian.org>  Tue, 16 Jun 2020 11:57:40 -0400
+
+meanwhile (1.0.2-9) unstable; urgency=medium
+
+  * QA upload.
+  * Fix a login issue due to code optimization.  Closes: #764494
+
+ -- Breno Leitao <breno.leitao@gmail.com>  Thu, 21 Jul 2016 15:09:00 -0400
+
+meanwhile (1.0.2-8) unstable; urgency=medium
+
+  * QA upload.
+  * Don't install the example files (differing on different architectures).
+    Could be split out into another package at some point. Closes: #812986.
+  * Fix lintian warnings.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 09 Jul 2016 12:56:38 +0200
+
+meanwhile (1.0.2-7) unstable; urgency=medium
+
+  * QA upload.
+  * Multiarchify the library packages. LP: #1508659.
+  * Build using dpkg-buildflags.
+  * Enable parallel builds.
+  * Fix crash on group chat request with Lotus Notes version 8.5.1
+    (Manuel Siggen). LP: #1430366.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 28 Jan 2016 01:26:53 +0100
+
+meanwhile (1.0.2-5) unstable; urgency=low
+
+  [ Chris Vanden Berghe ]
+  * Orphan package
+
+  [ Andreas Barth ]
+  * Apply fixes for more recent sametime servers. Closes: #468893
+  * Add dh-autoreconf to fix FTBFS on ppc64el. Closes: #758120
+  * configure.ac: remove -shared as libtool changed interpretation.
+
+ -- Andreas Barth <aba@ayous.org>  Tue, 09 Sep 2014 16:55:43 +0000
+
+meanwhile (1.0.2-4.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "Including individual glib headers no longer supported":
+    apply patch from Michael Biebl:
+    - Fix build failure with glib 2.32 where including individual glib headers
+      is no longer allowed.
+    (Closes: #665579)
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 18 May 2013 18:56:09 +0200
+
+meanwhile (1.0.2-4) unstable; urgency=low
+
+  * null dependency_libs from .la files (closes: #619210)
+  * added homepage control field (closes: #615295,#615386)
+  * fixed some Lintian bugs and bumped up standards version
+
+ -- Chris Vanden Berghe <chrisvdb@debian.org>  Sun, 29 May 2011 19:02:58 +0800
+
+meanwhile (1.0.2-3) unstable; urgency=low
+
+  * updated standards version to 3.7.2
+
+ -- Chris Vanden Berghe <chrisvdb@debian.org>  Wed, 23 May 2007 17:32:15 +0200
+
+meanwhile (1.0.2-2) unstable; urgency=low
+
+  * changed maintainer email address
+  * fixed description of -dev
+  * added lintian override for deletion of config.status
+  * ready for upload
+
+ -- Chris Vanden Berghe <chrisvdb@debian.org>  Sat, 14 Jan 2006 17:35:30 +0100
+
+meanwhile (1.0.2-1) unstable; urgency=low
+
+  * New upstream version, which bumped up so version
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Mon,  9 Jan 2006 18:14:18 +0100
+
+meanwhile (0.4.2-2) unstable; urgency=low
+
+  * Updated to latest standards version (no changes).
+  * Added watch file.
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Sun, 14 Aug 2005 18:47:41 +0200
+
+meanwhile (0.4.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Wed,  1 Jun 2005 13:33:23 +0200
+
+meanwhile (0.4.1-2) unstable; urgency=low
+
+  * Added homepage to description.
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Thu, 26 May 2005 00:51:28 +0200
+
+meanwhile (0.4.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added shlibs file.
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Sun, 22 May 2005 12:50:24 +0200
+
+meanwhile (0.4.0-2) unstable; urgency=low
+
+  * Initial upload to Debian (Closes: #254915)
+  * changed section of libmeanwhile-dev from devel to libdevel (Adeodato Simó)
+  * fixed typo in the short description of libmeanwhile-dev (Adeodato Simó)
+  * deleted /usr/bin and /usr/sbin from packages (Adeodato Simó & Matthieu
+    Verbert)
+  * fixed missing depend on libglib2.0-dev (Matthieu Verbert)
+  * README, AUTHORS and TODO are now installed in libmeanwhile0 documentation
+    dir (Adeodato Simó & Matthieu Verbert)
+  * reworked package description
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Sun, 20 Mar 2005 23:10:19 +0100
+
+meanwhile (0.4.0-1) unstable; urgency=low
+
+  * new upstream version
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Sat, 19 Mar 2005 15:08:29 +0100
+
+meanwhile (0.3-7) unstable; urgency=low
+
+  * patched source to fix AMD FTBFS (no bug report filed): upstream uses wrong
+    pointer-types (unsigned int) which are now replaced with gsize.
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Mon, 14 Feb 2005 22:36:05 +0100
+
+meanwhile (0.3-6) unstable; urgency=low
+
+  * changed to standards version 3.6.1 (no changes)
+  * marked package as non-native
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Mon, 14 Feb 2005 21:14:39 +0100
+
+meanwhile (0.3-5) unstable; urgency=low
+
+  * Changed name of library to reflect soname.
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Mon, 14 Feb 2005 19:58:39 +0100
+
+meanwhile (0.3-4) unstable; urgency=low
+
+  * Clean-up of rules file
+  * Commented out g_debug definition in src/mw_debug.h because of double
+    definition
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Mon, 14 Feb 2005 19:45:17 +0100
+
+meanwhile (0.3-3) unstable; urgency=low
+
+  * Added net section to source package
+  * Created .diff
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Tue, 28 Sep 2004 15:48:27 +0200
+
+meanwhile (0.3-2) unstable; urgency=low
+
+  * Fix some dependencies problems
+  * Fix lintian warnings
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Tue, 28 Sep 2004 13:02:33 +0200
+
+meanwhile (0.3-1) unstable; urgency=low
+
+  * Initial Release (Closes:#254915).
+
+ -- Chris Vanden Berghe <Chris@VandenBerghe.org>  Wed, 18 Aug 2004 00:16:20 +0200

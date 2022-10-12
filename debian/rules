@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/default.mk
+include /usr/share/dpkg/architecture.mk
+
+# dirty workaround
+# https://bugs.debian.org/940621
+export DEB_CFLAGS_MAINT_APPEND=-O0 -fno-tree-vrp
+
+%:
+	dh $@
+
+execute_after_dh_auto_install:
+	$(RM) debian/tmp/usr/lib/*/*.la
